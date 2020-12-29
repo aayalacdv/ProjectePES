@@ -1,0 +1,19 @@
+29 Dec 2020 11:01:20,920 INFO  ~ Starting /home/axl/Desktop/test3/app1
+29 Dec 2020 11:01:21,308 INFO  ~ Module docviewer is available (/home/axl/play-1.5.3/modules/docviewer)
+29 Dec 2020 11:01:21,873 WARN  ~ You're running Play! in DEV mode
+29 Dec 2020 11:01:21,956 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+29 Dec 2020 11:05:53,400 INFO  ~ HikariPool-1 - Starting...
+29 Dec 2020 11:05:53,421 INFO  ~ HikariPool-1 - Start completed.
+29 Dec 2020 11:05:53,440 INFO  ~ Connected to jdbc:h2:mem:play for default
+29 Dec 2020 11:05:54,474 INFO  ~ Application 'app' is now started !
+29 Dec 2020 11:07:22,353 ERROR ~ Restart: Need to restart Play because /home/axl/Desktop/test3/app1/conf/application.conf has been changed
+java.lang.RuntimeException: Need to restart Play because /home/axl/Desktop/test3/app1/conf/application.conf has been changed
+	at play.ConfigurationChangeWatcherPlugin.onConfigurationFileChanged(ConfigurationChangeWatcherPlugin.java:34)
+	at play.ConfigurationChangeWatcherPlugin.detectChange(ConfigurationChangeWatcherPlugin.java:28)
+	at play.plugins.PluginCollection.detectChange(PluginCollection.java:585)
+	at play.Play.detectChanges(Play.java:666)
+	at play.Invoker$Invocation.init(Invoker.java:220)
+	at Invocation.HTTP Request(Play!)
+29 Dec 2020 11:26:00,382 INFO  ~ Restart: 2 classes changed, caused by: java.lang.UnsupportedOperationException: class redefinition failed: attempted to add a method
+29 Dec 2020 11:38:56,043 INFO  ~ Restart: 2 classes changed, caused by: java.lang.UnsupportedOperationException: class redefinition failed: attempted to add a method
+29 Dec 2020 11:58:41,989 INFO  ~ Restart: 2 classes changed, caused by: java.lang.UnsupportedOperationException: class redefinition failed: attempted to change the schema (add/remove fields)
