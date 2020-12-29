@@ -10,7 +10,7 @@ import java.util.*;
 public class Application extends Controller {
 
     public static void index() {
-        renderText("La vida es dura bro ");
+        render(); 
     }
 
 }
