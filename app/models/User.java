@@ -48,4 +48,9 @@ public class User extends Model{
          User usr = new User( name, password).save(); 
  
  }
+    public User addCourse ( Course course ){
+        this.courses.add(course); 
+        this.save(); 
+        return this; 
+    }
 }
