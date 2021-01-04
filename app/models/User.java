@@ -1,6 +1,11 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import play.db.jpa.Model;
 
@@ -11,11 +16,19 @@ public class User extends Model{
     public String password; 
     public boolean logged = false;
 
+
+    @OneToMany (mappedBy = "user", cascade = CascadeType.ALL)
+    public List<Course> courses; 
+
+
+
     public User(String name, String password) {
+
         this.name = name;
         this.password = password;
-
+        this.courses = new ArrayList<Course>(); 
     }
+
 
     // Mirar si existe el usuario
     public static User exists(String name, String password) {
