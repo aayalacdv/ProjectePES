@@ -68,6 +68,35 @@ public class BasicTest extends UnitTest {
 
 
     }
+
+
+    @Test
+    public void testingYML(){
+      Fixtures.loadModels("data.yml"); 
+
+
+      assertEquals(1,User.count()); 
+      assertEquals(2, Course.count());
+      assertEquals(2, Exam.count());
+
+
+      assertNotNull(User.exists("Axel", "lavida")); 
+
+
+      List<Course> courses = Course.find("user.name","Axel").fetch(); 
+      assertEquals(2, courses.size());
+      
+      List<Exam> exams = Exam.find("course.name","PES").fetch(); 
+      assertEquals(1, exams.size());
+
+
+
+      
+
+
+
+
+     }
    
 
 }

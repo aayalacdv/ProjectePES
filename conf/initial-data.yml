@@ -16,8 +16,15 @@ Course(pes):
     meanToPass: 3.33 
     percentageLeft: 75
 
+
+Exam(fq): 
+    name: FQ_PES
+    percentage: 25
+    course: pes
+    score: 10
+
 Exam(mq): 
-    name: MQ
+    name: MQ_PES
     percentage: 25
     course: pes
     score: 10
@@ -27,7 +34,7 @@ Course(csl):
     name: Circuitos y Sistemas Lineales
     user: axel 
     currentGrade: 2.5
-    meanToPass: 3.33
+    meanToPass: 3.35
     percentageLeft: 75
 
 
