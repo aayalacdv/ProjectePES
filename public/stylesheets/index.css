@@ -1,0 +1,36 @@
+.index_body{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.imagen{
+    display: flex;
+    align-items:flex-start;
+    margin: 7vh;
+    margin-right: 150px;
+
+
+}
+
+.imagen img{
+    height: 60vh;
+}
+
+.publicidad{
+    align-items: center;
+    margin: 10vh;
+   
+    
+}
+
+.publicidad h1{
+    font-size: 5ch;
+}
+
+.lista_publi{
+
+    margin: 50px;
+    align-items: center;
+    font-size: 3ch;
+}

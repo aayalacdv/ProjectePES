@@ -1,0 +1,43 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    padding: 0%;
+}
+
+
+.logo img{
+    height: 5vh;
+}
+.logo {
+    display: flex; 
+    align-items: center;
+    flex:2; 
+}
+
+.nav{
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lista{
+    
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+   
+}
+
+.list{
+    flex: 2; 
+   
+}
+
+.links{
+    text-decoration: none;
+    color: black; 
+    font-size: 2.5ch;
+}
+
+
