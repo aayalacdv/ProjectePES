@@ -1,0 +1,62 @@
+[33mcommit f1f3203633235cb83eee3f12a59612c19e216b17[m[33m ([m[1;36mHEAD -> [m[1;32mfirstscreen[m[33m, [m[1;31morigin/firstscreen[m[33m)[m
+Author: aayalacdv <aayalacdv2000@gmail.com>
+Date:   Wed Jan 6 13:46:52 2021 +0100
+
+    added first html code
+
+[33mcommit 8c34156e1247e1731cde1f0372a2b6cad5b81b7a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: e7f87f7 08d8882
+Author: aayalacdv <62704660+aayalacdv@users.noreply.github.com>
+Date:   Mon Jan 4 22:51:37 2021 +0100
+
+    Merge pull request #3 from aayalacdv/classesandexamns
+    
+    added functions to manage marks
+
+[33mcommit 08d88824b4db58190bc3d2a234c2ebf0933b8012[m[33m ([m[1;31morigin/classesandexamns[m[33m)[m
+Author: aayalacdv <aayalacdv2000@gmail.com>
+Date:   Mon Jan 4 22:49:06 2021 +0100
+
+    added functions to manage marks
+
+[33mcommit e7f87f7cda59276671d95064d047f2b3feec556d[m
+Merge: 9892f0c d7624c4
+Author: aayalacdv <62704660+aayalacdv@users.noreply.github.com>
+Date:   Mon Jan 4 17:51:02 2021 +0100
+
+    Merge pull request #2 from aayalacdv/classesandexamns
+    
+    added Course and Examn classes
+
+[33mcommit d7624c4585267c9708d0b3b5413b97be108c7bc0[m
+Author: aayalacdv <aayalacdv2000@gmail.com>
+Date:   Mon Jan 4 17:45:21 2021 +0100
+
+    added Course and Examn classes
+
+[33mcommit 9892f0ce828272a9fb3b1f3adcd865f0e8427836[m
+Merge: cba0be9 b6ad8be
+Author: aayalacdv <62704660+aayalacdv@users.noreply.github.com>
+Date:   Tue Dec 29 12:27:22 2020 +0100
+
+    Merge pull request #1 from aayalacdv/usercredentials
+    
+    added usr and pass, test works
+
+[33mcommit b6ad8be438e527a972fdaa7b2556215b8b620fed[m
+Author: aayalacdv <aayalacdv2000@gmail.com>
+Date:   Tue Dec 29 12:02:48 2020 +0100
+
+    added usr and pass, test works
+
+[33mcommit cba0be94c8f745c32133677d9277623f20515380[m
+Author: aayalacdv <62704660+aayalacdv@users.noreply.github.com>
+Date:   Tue Dec 29 09:46:07 2020 +0100
+
+    Create README.md
+
+[33mcommit 3fce93d9cd65032d97b6aa5ca27d00d077cfe9fe[m
+Author: aayalacdv <aayalacdv2000@gmail.com>
+Date:   Mon Dec 28 19:25:03 2020 +0100
+
+    first commit

@@ -1,0 +1,31 @@
+<div class="title">
+    <h2 class="username">
+        <a href="#"> ${axel.name}'s Marks</a>
+    </h2>
+</div>
+
+<div class="body">
+    <div class="marks">
+        #{if courses}
+            <div class="courseinfo">
+                <h3> Currently in ${courses.size()} courses</h3>
+            </div>
+            <div class="coursedetail">
+               <h3>Detailed info about your courses</h3> 
+                   #{list items:courses, as:'course'}
+                       <h3>${course.name}</h3>
+                       #{list items:course.exams, as:'exam'}
+                                <p>${exam.name}  ->  ${exam.score}</p>
+                       #{/list}
+                       <p> Mean to pass -> ${course.meanToPass} </p>
+                       <p> Current grade-> ${course.currentGrade} </p>
+                   #{/list}
+            </div>
+        #{/if}
+    </div>
+    <div class="empty">
+        #{else}
+            No hay cursos matriculados 
+        #{/else}
+    </div>
+</div>
