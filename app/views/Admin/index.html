@@ -1,0 +1,35 @@
+#{extends 'main.html' /}
+#{set title:'MARKS!' /}
+
+<header>
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/index.css'}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+</header>
+
+<div class="index_body">
+
+    #{secure.check 'admin'}
+    <div class="publicidad">
+        
+        <h1 class="publi_h1">Welcome to the Party Admin</h1>
+        <ul class="lista_publi">
+            <li class="${request.controller == 'Users' ? 'selected' : ''}">
+                <a href="@{Users.list()}">Users</a>
+            </li>
+            <li class="${request.controller == 'Courses' ? 'selected' : ''}">
+                <a href="@{Courses.list()}">Courses</a>
+            </li>
+            <li class="${request.controller == 'Exams' ? 'selected' : ''}">
+                <a href="@{Exams.list()}">Exams</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="imagen">
+        <img src="/public/images/admin.jpg" alt="agenda">
+    </div>
+    #{/secure.check}
+    
+</div>

@@ -7,6 +7,12 @@
 User(axel):
     name: Axel 
     password: lavida 
+    isAdmin: true
+
+User(marc):
+    name: Marc 
+    password: pipi 
+    isAdmin: false
 
 
 Course(pes): 
