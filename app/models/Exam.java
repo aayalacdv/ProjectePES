@@ -20,14 +20,27 @@ public class Exam extends Model{
        this.name = name; 
        this.course = course; 
        this.percentage = percentage; 
-       this.score = 0;  
+       this.score = 0;
+       this.save();
        
    }
 
    public Exam addScore(double score){
+       if (score != 0){
        this.score = score;
        this.course.updateParammeters(this); 
        this.save(); 
-       return this; 
+       return this;
+       }
+       else { return this; }
+   }
+
+
+
+   public Exam upDateParameters(String newname, double newscore){
+       this.course.deleteExam(this);
+       this.name = newname;
+       this.addScore(newscore);
+       return this;
    }
 }

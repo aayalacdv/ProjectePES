@@ -25,7 +25,7 @@ public class User extends Model{
 
 
     @OneToMany (mappedBy = "user", cascade = CascadeType.ALL)
-    public List<Course> courses; 
+    public List<Course> courses;
 
     public String toString(){
         return name;
@@ -46,10 +46,8 @@ public class User extends Model{
 
     // Borrar el usuario
     public static int deleteUser(User user) {
-        if (user.isAdmin) {
-          user.delete(); 
-      }
-      return 0; 
+        user.delete();
+        return 0;
   }
 
     //Agregar usuario nuevo
@@ -61,5 +59,13 @@ public class User extends Model{
         this.courses.add(course); 
         this.save(); 
         return this; 
+    }
+
+    public User deleteCourse(Course course){
+
+        for (Course crs : this.courses){
+            if(crs == course){ crs.delete();}
+        }
+        return this;
     }
 }

@@ -12,9 +12,38 @@ import models.*;
 public class Application extends Controller {
 
     public static void index() {
-        User axel = User.find("byName", "Axel").first(); 
-        List<Course> courses = axel.courses; 
-        render(axel,courses); 
+        render();
     }
+
+
+    public static void signup (){
+        render();
+    }
+
+    public static void addUser(String username, String password){
+        User usr = User.find("byName", username).first();
+        if (usr == null ) {
+            User.addUser(username,password);
+            index();
+        }
+        else {
+           signup();
+        }
+    }
+
+
+    public static void deleteUser(String user){
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 }

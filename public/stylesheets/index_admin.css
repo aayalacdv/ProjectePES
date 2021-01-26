@@ -1,0 +1,51 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.options_admin{
+    display:flex;
+    flex:2;
+}
+
+ul{
+    list-style: none;
+}
+
+.admin_h1{
+    margin-left: 2vh;
+}
+
+.imagen{
+    position: relative;
+    top: 80px;
+    right: 1px;
+    left:400px;
+
+}
+
+.imagen img{
+
+    max-width: 50%;
+    height: auto;
+
+}
+
+
+.coursedetail{
+    display: flex;
+}
+
+
+button {
+  border: none;
+  background-color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.table_input{
+    border: none;
+}

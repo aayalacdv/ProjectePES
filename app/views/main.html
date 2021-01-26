@@ -14,14 +14,15 @@
        
         <nav class="nav">
             <div class="logo">
-                <img src="/public/images/notebook.png" alt="notebook">
-                <h1>MARKS!</h1>
+                <a href="@{Application.index()}"><img src="/public/images/notebook.png" alt="notebook"></a>
+                <a href="@{Application.index()}"> <h1>MARKS!</h1></a>
             </div>
             <div class="list">
             <ul class="lista">
-                <li><a  class="links" href="#"> Login</a></li>
-                <li><a  class="links" href="#"> Log Out</a></li>
-                <li><a  class="links" href="#"> Sign Up</a></li>
+                <li><a  class="links" href="/login"> Login</a></li>
+                <li><a  class="links" href="/logout"> Log Out</a></li>
+                <li><a  class="links" href="@{Application.signup()}"> Sign Up</a></li>
+                <li><a  class="links" href="@{Application.deleteUser(user)}"> Delete account</a></li>
             </ul>
 </div>
         </nav>

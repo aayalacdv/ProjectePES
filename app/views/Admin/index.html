@@ -1,8 +1,9 @@
 #{extends 'main.html' /}
-#{set title:'MARKS!' /}
+#{set titde:'MARKS!' /}
 
 <header>
-        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/index.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/index_admin.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/table.css'}">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
 </header>
@@ -10,10 +11,10 @@
 <div class="index_body">
 
     #{secure.check 'admin'}
-    <div class="publicidad">
+    <div class="admin_zone">
         
-        <h1 class="publi_h1">Welcome to the Party Admin</h1>
-        <ul class="lista_publi">
+        <h3 class="admin_h1">Bienvenido Admin</h3>
+        <ul class="options_admin">
             <li class="${request.controller == 'Users' ? 'selected' : ''}">
                 <a href="@{Users.list()}">Users</a>
             </li>
@@ -27,9 +28,74 @@
 
     </div>
 
-    <div class="imagen">
-        <img src="/public/images/admin.jpg" alt="agenda">
-    </div>
     #{/secure.check}
-    
+
+</div>
+
+<div>
+
+
+</div>
+
+
+<div class="marks">
+    #{if courses}
+    <div class="courseinfo">
+        <h3> Actualmente en  ${courses.size()} asignaturas</h3>
+    </div>
+    <div class="coursedetail">
+
+        #{list items:courses, as:'course'}
+        <table>
+        <tr>
+
+            <form action="@{Admin.modPage()}" >
+
+                <td><input class="table_input" type="text" value="${course.name}"  name="course"></td>
+                <td><button type="submit">Modificar</button></td>
+
+
+            </form>
+        </tr>
+        <tr>
+                <td>Examenes</td>
+                <td>Nota</td>
+        </tr>
+        #{list items:course.exams, as:'exam'}
+        <tr>
+                <td>${exam.name}</td>
+                <td>${exam.score}</td>
+        </tr>
+        #{/list}
+        <tr>
+            <td>Media para aprobar</td>
+            <td>${course.meanToPass}</td>
+        </tr>
+        <tr>
+            <td>Nota actual</td>
+            <td>${course.currentGrade}</td>
+        </tr>
+
+        #{/list}
+        </table>
+    </div>
+    #{/if}
+</div>
+
+<div class="new_course">
+    <h4>Añade una asignatura nueva</h4>
+    #{form @Admin.addCourse()}
+    #{ifErrors}
+    <p class="error">
+        Un nombre es necesario!
+    </p>
+    #{/ifErrors}
+
+    #{if flash.success}
+    <p class="success">${flash.success}</p>
+    #{/if}
+    <label for="name">Nombre</label><br>
+    <input type="text" name="name" id="name">
+    <button type="submit">Añadir</button>
+    #{/form}
 </div>

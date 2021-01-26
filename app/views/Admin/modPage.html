@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+#{extends 'main.html' /}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/mod.css'}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/table.css'}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<h2>Modifica el nombre de la asignatura </h2>
+
+<div class="nombre">
+#{form @Admin.updateCourseName(crs.name)}
+    #{ifErrors}
+    <p class="error">
+        Un nombre es necesario!
+    </p>
+    #{/ifErrors}
+
+    #{if flash.success}
+    <p class="success">${flash.success}</p>
+    #{/if}
+
+    <table>
+        <tr>
+            <td>Nombre actual</td>
+            <td>Nombre nuevo</td>
+
+        </tr>
+        <tr>
+            <td><input type="text" value="${crs.name}"  name="curso_viejo"></td>
+            <td><input type="text"   name="curso" placeholder="Introduce nombre"></td>
+            <td><button type="submit">Modificar</button></td>
+
+        </tr>
+
+    </table>
+
+
+#{/form}
+</div>
+
+<h2>Modifica los exámenes que tienes</h2>
+
+<div class="examenes">
+    <table>
+        <tr>
+            <td>Nombre antiguo</td>
+            <td>Nombre nuevo</td>
+            <td>Calificación</td>
+        </tr>
+    #{list items:crs.exams, as:'exam'}
+    #{form @Admin.updateExam(crs.name)}
+
+        <tr>
+            <td><input type="text" value="${exam.name}" name="oldname"></td>
+            <td><input type="text"  name="newname" placeholder="Nuevo nombre"></td>
+            <td><input type="number" value="${exam.score}"  name="score" min="0" max="10"></td>
+            <td><button type="submit">Modificar</button></td>
+            <td><button type="submit" formaction="@{Admin.deleteExam(crs.name)}">Borrar examen</button></td>
+        </tr>
+
+    </table>
+    #{/form}
+
+    #{/list}
+</div>
+
+<div class="add_exam">
+    <h2>Añade un examen</h2>
+    #{form @Admin.addExam(crs.name)}
+
+    <table>
+        <tr>
+            <td>Porcentage</td>
+            <td>Nombre</td>
+            <td>Calificación</td>
+        </tr>
+        <tr>
+            <td><input type="number" name="percentage" min="0" max="${crs.percentageLeft}"></td>
+            <td><input type="text"  name="examen" placeholder="Introduce el nombre"></td>
+            <td><input type="number" value="Puntuacion"  name="score" min="0" max="10"></td>
+            <td><button type="submit">Añadir</button></td>
+        </tr>
+
+    </table>
+    #{/form}
+</div>
+
+<p><a href="@{Admin.index()}">Regresar</a></p>
+<p><a href="@{Admin.deleteCourse(crs.name)}">Borrar Asignatura</a></p>
+
+
+</body>
+
+
+
+</html>

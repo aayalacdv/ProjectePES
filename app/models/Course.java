@@ -22,7 +22,7 @@ public class Course extends Model {
     public User user; 
     
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
-    public List<Exam> exams; 
+    public List<Exam> exams;
 
 
     public Course (String name, User user){
@@ -37,9 +37,16 @@ public class Course extends Model {
 
 
     public Course addExam ( Exam exam){
-        this.exams.add(exam); 
-        this.save(); 
-        return this; 
+        if (this.percentageLeft < exam.percentage){
+            exam.delete();
+            return this;
+        }
+        else{
+            this.exams.add(exam);
+            this.updateParammeters(exam);
+            this.save();
+            return this;
+        }
     }
 
 
@@ -64,6 +71,35 @@ public class Course extends Model {
        }
         this.save();
         return this; 
+    }
+
+    public Course deleteExam (Exam exam){
+
+        this.currentGrade =  this.currentGrade - exam.score * exam.percentage / 100;
+
+        this.percentageLeft = this.percentageLeft + exam.percentage;
+            if(this.currentGrade < 5 && this.percentageLeft != 0){
+                this.meanToPass = (5 - this.currentGrade)*100.0/this.percentageLeft ;
+                this.meanToPass = Math.round(this.meanToPass * 100.0)/100.0;
+            }
+            else {
+                this.meanToPass = 0;
+            }
+            if (this.percentageLeft == 0){
+                this.finalGrade = this.currentGrade;
+                this.meanToPass = 0;
+            }
+
+        this.save();
+        return this;
+    }
+
+
+    public Course updateName(String name ){
+        this.name = name;
+        this.save();
+        return this;
+
     }
 
 

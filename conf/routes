@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                                       Application.index
+*
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -15,9 +16,11 @@ GET     /public/                                staticDir:public
 *       /{controller}/{action}                  {controller}.{action}
 
 # Import CRUD routes
-#Administration 
+#Administration
 GET     /admin/?            Admin.index
+*       /admin/modpage/:course    Admin.modPage(course : Course )
 *       /admin              module:crud
+
 
 #Import Secure routes
 *      /                   module:secure
