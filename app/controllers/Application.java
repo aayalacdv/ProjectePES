@@ -33,7 +33,9 @@ public class Application extends Controller {
 
 
     public static void deleteUser(String user){
-
+        User usr = User.find("byName", user).first();
+        usr.delete();
+        index();
     }
 
 
